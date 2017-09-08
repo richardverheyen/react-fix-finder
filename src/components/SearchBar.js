@@ -5,16 +5,20 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      address: 'Melbourne, Australia'}
-    this.onChange = (address) => this.setState({ address })
+      address: 'Melbourne, Australia'
+    }
+
+  this.onChange = (address) =>
+    this.setState({ address })
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault()
+    const { getCafes } = this.props;
 
     geocodeByAddress(this.state.address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
+      .then(latLng => getCafes(latLng))
       .catch(error => console.error('Error', error))
   }
 
@@ -28,13 +32,15 @@ class SearchBar extends React.Component {
     }
 
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <PlacesAutocomplete
-          inputProps={inputProps}
-          options={options}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <form onSubmit={this.handleFormSubmit}>
+          <PlacesAutocomplete
+            inputProps={inputProps}
+            options={options}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     )
   }
 }
