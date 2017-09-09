@@ -1,6 +1,36 @@
 #list-component {
-  padding-left: 0;
-  li {
-    list-style: none;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  ul {
+    position: relative;
+    padding-left: 0;
+    margin: 0;
+    height: 33.33vw;
+    width: 39vw;
+    .hex-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(60deg);
+      transform-origin: center;
+      overflow: hidden;
+      width: 39vw;
+      height: 33.33vw;
+      background-color: transparent;
+    }
+    li {
+      list-style: none;
+      div {
+        div.hex-container {
+          transform: translate(-50%,-50%) rotate(240deg);
+          background-color: red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
   }
 }

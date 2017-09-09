@@ -23,11 +23,11 @@ section > div {
     position: relative;
     display: flex;
     width: 96vw; }
-    #search-bar form > div {
+    #search-bar form > div#PlacesAutocomplete__root {
       display: flex;
       width: 78vw;
       padding-right: 0 !important; }
-      #search-bar form > div input {
+      #search-bar form > div#PlacesAutocomplete__root input {
         padding: 0 0 0 2vw !important;
         margin: 0 !important;
         line-height: 32px;
@@ -49,6 +49,31 @@ section > div {
         background: rgba(53, 44, 7, 0.49); }
 
 #list-component {
-  padding-left: 0; }
-  #list-component li {
-    list-style: none; }
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%); }
+  #list-component ul {
+    position: relative;
+    padding-left: 0;
+    margin: 0;
+    height: 33.33vw;
+    width: 39vw; }
+    #list-component ul .hex-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(60deg);
+      transform-origin: center;
+      overflow: hidden;
+      width: 39vw;
+      height: 33.33vw;
+      background-color: transparent; }
+    #list-component ul li {
+      list-style: none; }
+      #list-component ul li div div.hex-container {
+        transform: translate(-50%, -50%) rotate(240deg);
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
