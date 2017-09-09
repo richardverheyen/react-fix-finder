@@ -59,19 +59,22 @@ section > div {
     margin: 0;
     height: 33.33vw;
     width: 39vw; }
-    #list-component ul .hex-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(60deg);
-      transform-origin: center;
-      overflow: hidden;
-      width: 39vw;
+    #list-component ul li.hexagon {
+      list-style: none;
       height: 33.33vw;
-      background-color: transparent; }
-    #list-component ul li {
-      list-style: none; }
-      #list-component ul li div div.hex-container {
+      width: 39vw;
+      position: absolute; }
+      #list-component ul li.hexagon .hex-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(60deg);
+        transform-origin: center;
+        overflow: hidden;
+        width: 39vw;
+        height: 33.33vw;
+        background-color: transparent; }
+      #list-component ul li.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg);
         background-color: red;
         display: flex;

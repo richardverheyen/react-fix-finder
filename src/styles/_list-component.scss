@@ -9,26 +9,31 @@
     margin: 0;
     height: 33.33vw;
     width: 39vw;
-    .hex-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%) rotate(60deg);
-      transform-origin: center;
-      overflow: hidden;
-      width: 39vw;
-      height: 33.33vw;
-      background-color: transparent;
-    }
-    li {
+    li.hexagon {
       list-style: none;
+      height: 33.33vw;
+      width: 39vw;
+      position: absolute;
+      .hex-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(60deg);
+        transform-origin: center;
+        overflow: hidden;
+        width: 39vw;
+        height: 33.33vw;
+        background-color: transparent;
+      }
       div {
-        div.hex-container {
-          transform: translate(-50%,-50%) rotate(240deg);
-          background-color: red;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        div {
+          div.hex-inner {
+            transform: translate(-50%,-50%) rotate(240deg);
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
     }
