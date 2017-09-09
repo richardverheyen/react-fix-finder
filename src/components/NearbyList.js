@@ -3,11 +3,23 @@ import React, { Component } from 'react';
 class NearbyList extends Component {
 
   arrangeHexagons = (results) => { //calculate the transform rules for each hexagon
-    const x = 33.33; //the side length of the hexagon in vw
     let i = 0
+    let x = 33.33
+    let theta = Math.PI/3;
+
+
     for (let value of results) {
+      i > 5 ? (
+        i % 2 == 0 ? (
+          x = 66.66 //distance from the centre if i is even
+        ) : (
+          x = 57.72 //distance from the centre if i is odd
+        )
+      ) : (x);
+      i > 5 ? (theta = Math.PI/6) : (theta);
+
       let position = {
-        transform: 'translate(' + (x*(Math.sin((Math.PI/3)*i))) + 'vw,' + (-x*(Math.cos((Math.PI/3)*i))) + 'vw)'}
+        transform: 'translate(' + (x*(Math.sin(theta*i))) + 'vw,' + (-x*(Math.cos(theta*i))) + 'vw)'}
       results[i].hexagonPos = position;
       i++;
     }
