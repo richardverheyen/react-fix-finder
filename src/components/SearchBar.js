@@ -32,15 +32,15 @@ class SearchBar extends React.Component {
     }
 
     return (
-      <div>
+      <div id="search-bar">
         <form onSubmit={this.handleFormSubmit}>
-          <PlacesAutocomplete
-            inputProps={inputProps}
-            options={options}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        <PlacesAutocomplete
+          inputProps={inputProps}
+          options={options}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     )
   }
 }

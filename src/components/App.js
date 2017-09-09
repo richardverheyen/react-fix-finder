@@ -738,7 +738,8 @@ class App extends Component {
     return (
       <main>
         <SearchBar getCafes={this.onFormSubmit}/>
-        <ul>
+        <ul id="list-component">
+          <li id="you">You</li>
           {results.map((p) =>
             <li key={p.id}>
               {p.name}

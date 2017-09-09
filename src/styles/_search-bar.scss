@@ -1,0 +1,39 @@
+#search-bar {
+  display: flex;
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  form {
+    position: relative;
+    display: flex;
+    width: 96vw;
+    > div {
+      display: flex;
+      width: 78vw;
+      padding-right: 0 !important;
+      input {
+        padding: 0 0 0 2vw !important;
+        margin: 0 !important;
+        line-height: 32px;
+        margin: 0;
+        border: 0;
+        font-family: 'Raleway', sans-serif;
+      }
+    }
+    > button {
+      position: absolute;
+      right: 0;
+      background: white;
+      line-height: 32px;
+      border: 0;
+      padding: 0 !important;
+      width: 18vw;
+      z-index: 1;
+      font-family: 'Raleway', sans-serif;
+      cursor: pointer;
+      &:hover {
+        background: rgba(53, 44, 7, 0.49);
+      }
+    }
+  }
+}

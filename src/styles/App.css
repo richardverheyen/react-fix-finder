@@ -1,24 +1,54 @@
-.App {
-  text-align: center;
-}
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  display: flex;
+  font-family: 'Raleway', sans-serif; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+section > div {
+  max-width: 1080px;
+  min-width: 320px; }
 
-.App-intro {
-  font-size: large;
-}
+#search-bar {
+  display: flex;
+  position: absolute;
+  top: 2vw;
+  left: 2vw; }
+  #search-bar form {
+    position: relative;
+    display: flex;
+    width: 96vw; }
+    #search-bar form > div {
+      display: flex;
+      width: 78vw;
+      padding-right: 0 !important; }
+      #search-bar form > div input {
+        padding: 0 0 0 2vw !important;
+        margin: 0 !important;
+        line-height: 32px;
+        margin: 0;
+        border: 0;
+        font-family: 'Raleway', sans-serif; }
+    #search-bar form > button {
+      position: absolute;
+      right: 0;
+      background: white;
+      line-height: 32px;
+      border: 0;
+      padding: 0 !important;
+      width: 18vw;
+      z-index: 1;
+      font-family: 'Raleway', sans-serif;
+      cursor: pointer; }
+      #search-bar form > button:hover {
+        background: rgba(53, 44, 7, 0.49); }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+#list-component {
+  padding-left: 0; }
+  #list-component li {
+    list-style: none; }
