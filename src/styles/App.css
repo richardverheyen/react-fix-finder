@@ -59,28 +59,28 @@ li {
       #search-bar form > button:focus {
         outline: none; }
 
-#list-component {
+#results-list {
   position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%); }
-  #list-component ul {
+  #results-list ul {
     position: relative;
     padding-left: 0;
     margin: 0;
     height: 33.33vw;
     width: 39vw; }
-    #list-component ul a.hexagon {
+    #results-list ul a.hexagon {
       position: absolute;
       height: 33.33vw;
       width: 39vw;
       transition: all ease-out 400ms;
       z-index: 1;
       cursor: pointer; }
-      #list-component ul a.hexagon:hover {
+      #results-list ul a.hexagon:hover {
         z-index: 2;
         transform: translateY(-10px); }
-      #list-component ul a.hexagon .hex-container {
+      #results-list ul a.hexagon .hex-container {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -90,7 +90,7 @@ li {
         width: 39vw;
         height: 33.33vw;
         background-color: transparent; }
-      #list-component ul a.hexagon div div div.hex-inner {
+      #results-list ul a.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg);
         display: flex;
         justify-content: center;
@@ -98,10 +98,7 @@ li {
         text-align: center;
         background: url("/img/coffee-image-placeholder.jpg");
         background-size: cover; }
-        #list-component ul a.hexagon div div div.hex-inner p {
-          color: white;
-          font-size: 3vw;
+        #results-list ul a.hexagon div div div.hex-inner p {
+          color: #101616;
+          font-size: 8vw;
           user-select: none; }
-          @media (max-width: 400px) {
-            #list-component ul a.hexagon div div div.hex-inner p {
-              font-size: 3.6vw; } }

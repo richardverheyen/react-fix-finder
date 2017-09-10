@@ -1,4 +1,4 @@
-#list-component {
+#results-list {
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -43,12 +43,9 @@
             background: url('/img/coffee-image-placeholder.jpg');
             background-size: cover;
             p {
-              color: white;
-              font-size: 3vw;
+              color: $slate-grey;
+              font-size: 8vw;
               user-select: none;
-              @media (max-width: 400px) {
-                font-size: 3.6vw;
-              }
             }
           }
         }

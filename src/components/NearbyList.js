@@ -32,7 +32,7 @@ class NearbyList extends Component {
     this.arrangeHexagons(results)
 
     return (
-        <div id="list-component">
+        <div id="results-list">
           <ul>
           <li id="you"></li>
           {results.slice(0, 18).map((p) =>
@@ -40,7 +40,7 @@ class NearbyList extends Component {
               <div className="hex-container">
                 <div className="hex-container">
                   <div className="hex-container hex-inner">
-                    <p>{p.name}</p>
+                    <p>{p.rating}</p>
                   </div>
                 </div>
               </div>

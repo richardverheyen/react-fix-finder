@@ -35,6 +35,8 @@ class App extends Component {
     service.nearbySearch(request, this.callback);
   }
 
+  
+
   callback (results) {
     this.setState({results: results})
   }
