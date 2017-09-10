@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import Cafe from './components/Cafe';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={App} />
+          <Route path='/cafe' component={Cafe} />
         </Switch>
       </BrowserRouter>
     </Provider>
@@ -35,6 +37,7 @@ if (module.hot) {
           <BrowserRouter>
             <Switch>
               <Route exact path='/' component={App} />
+              <Route path='/cafe' component={Cafe} />
             </Switch>
           </BrowserRouter>
         </Provider>

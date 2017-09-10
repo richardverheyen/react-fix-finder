@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import SearchBar from './SearchBar';
-import NearbyList from './NearbyList'
+import NearbyList from './NearbyList';
 
 class App extends Component {
 
