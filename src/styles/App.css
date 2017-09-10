@@ -70,17 +70,17 @@ li {
     margin: 0;
     height: 33.33vw;
     width: 39vw; }
-    #list-component ul li.hexagon {
+    #list-component ul a.hexagon {
       position: absolute;
       height: 33.33vw;
       width: 39vw;
       transition: all ease-out 400ms;
       z-index: 1;
       cursor: pointer; }
-      #list-component ul li.hexagon:hover {
+      #list-component ul a.hexagon:hover {
         z-index: 2;
         transform: translateY(-10px); }
-      #list-component ul li.hexagon .hex-container {
+      #list-component ul a.hexagon .hex-container {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -90,7 +90,7 @@ li {
         width: 39vw;
         height: 33.33vw;
         background-color: transparent; }
-      #list-component ul li.hexagon div div div.hex-inner {
+      #list-component ul a.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg);
         display: flex;
         justify-content: center;
@@ -98,10 +98,10 @@ li {
         text-align: center;
         background: url("/img/coffee-image-placeholder.jpg");
         background-size: cover; }
-        #list-component ul li.hexagon div div div.hex-inner p {
+        #list-component ul a.hexagon div div div.hex-inner p {
           color: white;
           font-size: 3vw;
           user-select: none; }
           @media (max-width: 400px) {
-            #list-component ul li.hexagon div div div.hex-inner p {
+            #list-component ul a.hexagon div div div.hex-inner p {
               font-size: 3.6vw; } }

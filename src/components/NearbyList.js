@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class NearbyList extends Component {
 
@@ -35,7 +36,7 @@ class NearbyList extends Component {
           <ul>
           <li id="you"></li>
           {results.slice(0, 18).map((p) =>
-            <li key={p.id} className="hexagon" style={p.hexagonPos} >
+            <Link to={'/cafe'} key={p.id} className="hexagon" style={p.hexagonPos} >
               <div className="hex-container">
                 <div className="hex-container">
                   <div className="hex-container hex-inner">
@@ -43,7 +44,7 @@ class NearbyList extends Component {
                   </div>
                 </div>
               </div>
-            </li>
+            </Link>
           )}
         </ul>
       </div>
