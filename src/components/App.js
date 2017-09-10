@@ -19,7 +19,7 @@ class App extends Component {
   onFormSubmit(latLng) {
     let location = new window.google.maps.LatLng(latLng.lat,latLng.lng);
 
-    let map = new window.google.maps.Map(document.getElementById('you'), {
+    let map = new window.google.maps.Map(document.getElementById('centre'), {
         center: location,
         zoom: 15
       });
@@ -45,6 +45,7 @@ class App extends Component {
       <main>
         <SearchBar getCafes={this.onFormSubmit}/>
         <NearbyList results={this.state.results}/>
+        <div id="centre"></div>
       </main>
     );
   }

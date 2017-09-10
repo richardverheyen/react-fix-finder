@@ -4,23 +4,24 @@ class NearbyList extends Component {
 
   arrangeHexagons = (results) => { //calculate the transform rules for each hexagon
     let i = 0
-    let x = 33.33
-    let theta = Math.PI/3;
-
 
     for (let value of results) {
+      let x = 34;
+      let theta = Math.PI / 3;
       i > 5 ? (
-        i % 2 == 0 ? (
-          x = 66.66 //distance from the centre if i is even
+        i % 2 === 0 ? (
+          x = 2 * x //distance from the centre if i is even
         ) : (
-          x = 57.72 //distance from the centre if i is odd
+          x = x * 3 / Math.sqrt(3)  //distance from the centre if i is odd
         )
-      ) : (x);
-      i > 5 ? (theta = Math.PI/6) : (theta);
+      ) : (x)
+      i > 5 ? (theta = Math.PI / 6) : (theta);
 
       let position = {
-        transform: 'translate(' + (x*(Math.sin(theta*i))) + 'vw,' + (-x*(Math.cos(theta*i))) + 'vw)'}
-      results[i].hexagonPos = position;
+        top: (x*(Math.cos(theta*i))) + 'vw',
+        left: (-x*(Math.sin(theta*i))) + 'vw'
+      }
+      value.hexagonPos = position;
       i++;
     }
   }
@@ -32,18 +33,14 @@ class NearbyList extends Component {
     return (
         <div id="list-component">
           <ul>
-          <li id="you" className="hexagon">
-            <div className="hex-container">
-              <div className="hex-container">
-                <div className="hex-container hex-inner">You</div>
-              </div>
-            </div>
-          </li>
-          {results.map((p) =>
-            <li key={p.id} className="hexagon" style={p.hexagonPos}>
+          <li id="you"></li>
+          {results.slice(0, 18).map((p) =>
+            <li key={p.id} className="hexagon" style={p.hexagonPos} >
               <div className="hex-container">
                 <div className="hex-container">
-                  <div className="hex-container hex-inner">{p.name}</div>
+                  <div className="hex-container hex-inner">
+                    <p>{p.name}</p>
+                  </div>
                 </div>
               </div>
             </li>

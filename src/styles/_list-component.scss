@@ -9,11 +9,18 @@
     margin: 0;
     height: 33.33vw;
     width: 39vw;
+
     li.hexagon {
-      list-style: none;
+      position: absolute;
       height: 33.33vw;
       width: 39vw;
-      position: absolute;
+      transition: all ease-out 400ms;
+      z-index: 1;
+      cursor: pointer;
+      &:hover {
+        z-index: 2;
+        transform: translateY(-10px);
+      }
       .hex-container {
         position: absolute;
         top: 50%;
@@ -29,10 +36,20 @@
         div {
           div.hex-inner {
             transform: translate(-50%,-50%) rotate(240deg);
-            background-color: red;
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            background: url('/img/coffee-image-placeholder.jpg');
+            background-size: cover;
+            p {
+              color: white;
+              font-size: 3vw;
+              user-select: none;
+              @media (max-width: 400px) {
+                font-size: 3.6vw;
+              }
+            }
           }
         }
       }

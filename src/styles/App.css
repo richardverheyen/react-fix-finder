@@ -1,5 +1,4 @@
 body {
-  background-color: #f2f2f2;
   margin: 0;
   display: flex;
   font-family: 'Raleway', sans-serif; }
@@ -8,17 +7,23 @@ main {
   display: flex;
   height: 100vh;
   width: 100vw;
-  position: relative; }
+  position: relative;
+  background-color: #f6f5f3;
+  overflow: hidden; }
 
 section > div {
   max-width: 1080px;
   min-width: 320px; }
 
+li {
+  list-style: none; }
+
 #search-bar {
   display: flex;
   position: absolute;
   top: 2vw;
-  left: 2vw; }
+  left: 2vw;
+  z-index: 1; }
   #search-bar form {
     position: relative;
     display: flex;
@@ -34,6 +39,9 @@ section > div {
         margin: 0;
         border: 0;
         font-family: 'Raleway', sans-serif; }
+        #search-bar form > div#PlacesAutocomplete__root input:focus {
+          background: #fefefe;
+          outline: none; }
     #search-bar form > button {
       position: absolute;
       right: 0;
@@ -46,7 +54,10 @@ section > div {
       font-family: 'Raleway', sans-serif;
       cursor: pointer; }
       #search-bar form > button:hover {
-        background: rgba(53, 44, 7, 0.49); }
+        background: #fefefe;
+        outline: none; }
+      #search-bar form > button:focus {
+        outline: none; }
 
 #list-component {
   position: absolute;
@@ -60,10 +71,15 @@ section > div {
     height: 33.33vw;
     width: 39vw; }
     #list-component ul li.hexagon {
-      list-style: none;
+      position: absolute;
       height: 33.33vw;
       width: 39vw;
-      position: absolute; }
+      transition: all ease-out 400ms;
+      z-index: 1;
+      cursor: pointer; }
+      #list-component ul li.hexagon:hover {
+        z-index: 2;
+        transform: translateY(-10px); }
       #list-component ul li.hexagon .hex-container {
         position: absolute;
         top: 50%;
@@ -76,7 +92,16 @@ section > div {
         background-color: transparent; }
       #list-component ul li.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg);
-        background-color: red;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        text-align: center;
+        background: url("/img/coffee-image-placeholder.jpg");
+        background-size: cover; }
+        #list-component ul li.hexagon div div div.hex-inner p {
+          color: white;
+          font-size: 3vw;
+          user-select: none; }
+          @media (max-width: 400px) {
+            #list-component ul li.hexagon div div div.hex-inner p {
+              font-size: 3.6vw; } }
