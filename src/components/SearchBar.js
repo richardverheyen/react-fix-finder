@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      address: 'Melbourne, Australia'
+      address: 'Vancouver, BC Canada'
     }
 
   this.onChange = (address) =>

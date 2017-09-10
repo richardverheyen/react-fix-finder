@@ -20,9 +20,14 @@ class NearbyList extends Component {
 
       let position = {
         top: (x*(Math.cos(theta*i))) + 'vw',
-        left: (-x*(Math.sin(theta*i))) + 'vw'
+        left: (-x*(Math.sin(theta*i))) + 'vw',
+      }
+      let backgroundImage = {
+        background: 'url("' + results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '")',
+        'background-size': 'cover'
       }
       value.hexagonPos = position;
+      value.backgroundImage = backgroundImage;
       i++;
     }
   }
@@ -39,7 +44,7 @@ class NearbyList extends Component {
             <Link to={'/cafe'} key={p.id} className="hexagon" style={p.hexagonPos} >
               <div className="hex-container">
                 <div className="hex-container">
-                  <div className="hex-container hex-inner">
+                  <div className="hex-container hex-inner" style={p.backgroundImage}>
                     <p>{p.rating}</p>
                   </div>
                 </div>

@@ -96,9 +96,14 @@ li {
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: url("/img/coffee-image-placeholder.jpg");
         background-size: cover; }
         #results-list ul a.hexagon div div div.hex-inner p {
-          color: #101616;
-          font-size: 8vw;
-          user-select: none; }
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #b96c3e;
+          font-size: 4vw;
+          user-select: none;
+          background: radial-gradient(ellipse at center, black 0%, transparent 40%, transparent 100%);
+          width: 100%;
+          height: 100%; }

@@ -27,15 +27,15 @@ class App extends Component {
     let request = {
       location: location,
       rankby: 'prominence',
-      radius: '500',
-      type: ['cafes']
+      radius: '2000',
+      type: 'cafe'
     };
 
     let service = new window.google.maps.places.PlacesService(map);
     service.nearbySearch(request, this.callback);
   }
 
-  
+
 
   callback (results) {
     this.setState({results: results})
