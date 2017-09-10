@@ -9,6 +9,7 @@
     "react-dom": "^15.6.1",
     "react-places-autocomplete": "^5.4.3",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -24,13 +25,12 @@
     "webpack-dev-server": "^2.1.0-beta.11"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "npm run build-css && react-scripts build",
     "serve": "webpack-dev-server --hot --inline --content-base ./src --open",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
