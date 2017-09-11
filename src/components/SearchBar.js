@@ -13,6 +13,7 @@ class SearchBar extends React.Component {
     this.setState({ address })
   }
 
+
   handleFormSubmit = (event) => {
     event.preventDefault()
     const { getCafes } = this.props;

@@ -14,8 +14,8 @@ class NearbyList extends Component {
   }
 
   arrangeHexagons = (results) => { //calculate the transform rules for each hexagon
-    let i = 0
 
+    let i = 0
     for (let value of results) {
       let x = 34;
       let theta = Math.PI / 3;
@@ -27,11 +27,11 @@ class NearbyList extends Component {
         )
       }
       if (i > 5) { theta = Math.PI / 6 }
-
       let position = {
         top: (x*(Math.cos(theta*i))) + 'vw',
         left: (-x*(Math.sin(theta*i))) + 'vw',
       }
+
       let photoUrl
       if (results[i].hasOwnProperty('photos')) {
         photoUrl = results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})
@@ -42,6 +42,12 @@ class NearbyList extends Component {
         background: 'url("' + photoUrl + '")',
         'backgroundSize': 'cover'
       }
+
+      if (results[i].rating >= 4.5) {
+        value.class = 'recommended hexagon';
+      } else {
+        value.class = 'hexagon';
+      }
       value.hexagonPos = position;
       value.backgroundImage = backgroundImage;
       i++;
@@ -51,7 +57,6 @@ class NearbyList extends Component {
     const {results, sendToStore} = this.props;
     const { hoverItem } = this.state;
     this.arrangeHexagons(results);
-
     return (
         <div id="results-list">
           <ul>
@@ -62,7 +67,7 @@ class NearbyList extends Component {
           {results.slice(0, 18).map((p) =>
             <Link to={'/cafe'}
               key={p.id}
-              className="hexagon"
+              className={p.class}
               style={p.hexagonPos}
               onMouseOver={() => { this.setState({ hoverItem: p })}}
               onClick={() => {sendToStore(p.id) }}>

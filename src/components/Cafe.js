@@ -5,17 +5,20 @@ import { Link } from 'react-router-dom';
 
 class Cafe extends Component {
 
-  constructor({ cafeId }) {
-    super({ cafeId });
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
   render () {
     return(
-      <main>hi</main>
+      <main>
+        <Link to={'/'}>Back</Link>
+      </main>
     );
   }
 }
+
 const mapStateToProps = ({ cafeId }) => ({
   cafeId
 });

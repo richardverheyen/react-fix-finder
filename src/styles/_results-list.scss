@@ -40,6 +40,19 @@
         }
       }
     }
+    .recommended {
+      .hex-inner:after {
+        position: absolute;
+        content: '';
+        left: 50%;
+        bottom: 10%;
+        transform: translatex(-50%);
+        width: 4vw;
+        height: 4vw;
+        background: url('/img/gold-star.png');
+        background-size: cover;
+      }
+    }
     #centre {
       text-align: center;
       max-width: 90%;

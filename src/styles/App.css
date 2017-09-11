@@ -8,7 +8,7 @@ main {
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: #f6f5f3;
+  background-color: #ece6d9;
   overflow: hidden; }
 
 section > div {
@@ -92,6 +92,16 @@ li {
         background-color: transparent; }
       #results-list ul a.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg); }
+    #results-list ul .recommended .hex-inner:after {
+      position: absolute;
+      content: '';
+      left: 50%;
+      bottom: 10%;
+      transform: translatex(-50%);
+      width: 4vw;
+      height: 4vw;
+      background: url("/img/gold-star.png");
+      background-size: cover; }
     #results-list ul #centre {
       text-align: center;
       max-width: 90%;
