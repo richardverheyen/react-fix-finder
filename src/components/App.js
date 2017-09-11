@@ -48,7 +48,6 @@ class App extends Component {
       <main>
         <SearchBar getCafes={this.onFormSubmit}/>
         <NearbyList/>
-        <div id="map"></div>
       </main>
     );
   }
