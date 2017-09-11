@@ -95,8 +95,7 @@ li {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        background-size: cover; }
+        text-align: center; }
         #results-list ul a.hexagon div div div.hex-inner p {
           display: flex;
           justify-content: center;

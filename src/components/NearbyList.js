@@ -24,7 +24,7 @@ class NearbyList extends Component {
       }
       let backgroundImage = {
         background: 'url("' + results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '")',
-        'background-size': 'cover'
+        'backgroundSize': 'cover'
       }
       value.hexagonPos = position;
       value.backgroundImage = backgroundImage;
