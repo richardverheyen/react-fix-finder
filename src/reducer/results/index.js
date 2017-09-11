@@ -5,7 +5,7 @@ const initialState = []; //create a variable to hold our initial state, before w
 export default (state = initialState, action) => {
   switch (action.type) { //compares the actions type with each of the cases
     case SET_RESULTS:
-      return action.profiles;
+      return action.results;
     default:
       return state;
   }

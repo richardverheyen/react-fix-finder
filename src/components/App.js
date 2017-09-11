@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import SearchBar from './SearchBar';
 import NearbyList from './NearbyList';
+import { connect } from 'react-redux';
+import { setResults } from '../reducer/results/actions';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor({results, sendToStore}) {
+    super({results, sendToStore});
 
     this.state = {
       latLng: '',
@@ -36,7 +38,8 @@ class App extends Component {
   }
 
   callback (results) {
-    this.setState({results: results})
+    this.setState({results: results});
+    this.props.sendToStore(results);
   }
 
   render() {
@@ -51,4 +54,16 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ results }) => ({
+  results
+});
+
+const mapDispatchToProps = dispatch => ({
+  sendToStore(results) {
+    dispatch(
+      setResults(results)
+    );
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

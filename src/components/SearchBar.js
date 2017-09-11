@@ -1,9 +1,10 @@
-import React from 'react'
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import React from 'react';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       address: 'Vancouver, BC Canada'
     }
@@ -44,5 +45,4 @@ class SearchBar extends React.Component {
     )
   }
 }
-
 export default SearchBar
