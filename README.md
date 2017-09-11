@@ -5,7 +5,6 @@ An app that searches google for good cafes near a selected area and shows you wh
 * Has Hexagons.
 * Built with React, Redux, SASS (CSS), Atom & Git.
 * Uses the Google Maps and Google Places API's.
-* Designed to be used as a mobile app.
 * Code by [Richard Verheyen](https://github.com/richardverheyen)
 
 #### Setup

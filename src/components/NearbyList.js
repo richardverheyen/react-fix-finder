@@ -19,9 +19,10 @@ class NearbyList extends Component {
     for (let value of results) {
       let x = 34;
       let position = {};
-      if (window.innerWidth > 600) {
+      if (window.innerWidth > 600) { //Sets the width for 205px instead of 34vw
         x = 205;
       }
+
       let theta = Math.PI / 3;
       if ( i > 5 ) {
         i % 2 === 0 ? (
@@ -32,7 +33,7 @@ class NearbyList extends Component {
       }
       if (i > 5) { theta = Math.PI / 6 }
 
-      if (window.innerWidth > 600) {
+      if (window.innerWidth > 600) { // sets the position of the hexagons based on screen width
         position = {
           top: (x*(Math.cos(theta*i))) + 'px',
           left: (-x*(Math.sin(theta*i))) + 'px',
@@ -46,7 +47,7 @@ class NearbyList extends Component {
 
 
       let photoUrl
-      if (results[i].hasOwnProperty('photos')) {
+      if (results[i].hasOwnProperty('photos')) { // Checks to see if there is a photo before calling it
         photoUrl = results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})
       } else {
         photoUrl = "/img/coffee-image-placeholder.jpg"
@@ -56,7 +57,7 @@ class NearbyList extends Component {
         'backgroundSize': 'cover'
       }
 
-      if (results[i].rating >= 4.5) {
+      if (results[i].rating >= 4.5) { //Places stars on results which have a high rating
         value.class = 'recommended hexagon';
       } else {
         value.class = 'hexagon';

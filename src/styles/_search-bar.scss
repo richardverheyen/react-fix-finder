@@ -20,8 +20,11 @@
         border: 0;
         font-family: 'Raleway', sans-serif;
         font-size: 3.5vw;
+        @media (min-width: 600px) {
+          font-size: 3vw;
+        }
         @media (min-width: 800px) {
-          font-size: 2vw;
+          font-size: 2.7vw;
         }
         &:focus {
           background: #fefefe;
@@ -40,8 +43,11 @@
       z-index: 1;
       font-family: 'Raleway', sans-serif;
       font-size: 3.5vw;
+      @media (min-width: 600px) {
+        font-size: 3vw;
+      }
       @media (min-width: 800px) {
-        font-size: 2vw;
+        font-size: 2.7vw;
       }
 
       cursor: pointer;
