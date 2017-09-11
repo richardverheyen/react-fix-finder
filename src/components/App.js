@@ -7,8 +7,8 @@ import { setResults } from '../reducer/results/actions';
 
 class App extends Component {
 
-  constructor({results, sendToStore}) {
-    super({results, sendToStore});
+  constructor(props) {
+    super(props);
 
     this.state = {
       latLng: '',
@@ -30,7 +30,8 @@ class App extends Component {
       location: location,
       rankby: 'prominence',
       radius: '2000',
-      type: 'cafe'
+      type: 'cafe',
+      keyword: 'brew'
     };
 
     let service = new window.google.maps.places.PlacesService(map);
@@ -38,7 +39,6 @@ class App extends Component {
   }
 
   callback (results) {
-    // this.setState({results: results});
     this.props.sendToStore(results);
   }
 

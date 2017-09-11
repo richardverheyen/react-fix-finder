@@ -5,8 +5,8 @@ import { setSelectedCafe } from '../reducer/cafeId/actions';
 
 class NearbyList extends Component {
 
-  constructor({results, sendToStore}) {
-    super({results, sendToStore});
+  constructor(props) {
+    super(props);
 
     this.state = {};
   }
@@ -17,21 +17,27 @@ class NearbyList extends Component {
     for (let value of results) {
       let x = 34;
       let theta = Math.PI / 3;
-      i > 5 ? (
+      if ( i > 5 ) {
         i % 2 === 0 ? (
           x = 2 * x //distance from the centre if i is even
         ) : (
           x = x * 3 / Math.sqrt(3)  //distance from the centre if i is odd
         )
-      ) : (x)
-      i > 5 ? (theta = Math.PI / 6) : (theta);
+      }
+      if (i > 5) { theta = Math.PI / 6 }
 
       let position = {
         top: (x*(Math.cos(theta*i))) + 'vw',
         left: (-x*(Math.sin(theta*i))) + 'vw',
       }
+      let photoUrl
+      if (results[i].hasOwnProperty('photos')) {
+        photoUrl = results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})
+      } else {
+        photoUrl = "/img/coffee-image-placeholder.jpg"
+      }
       let backgroundImage = {
-        background: 'url("' + results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '")',
+        background: 'url("' + photoUrl + '")',
         'backgroundSize': 'cover'
       }
       value.hexagonPos = position;
@@ -39,7 +45,6 @@ class NearbyList extends Component {
       i++;
     }
   }
-
   render() {
     const {results, sendToStore} = this.props;
     this.arrangeHexagons(results);

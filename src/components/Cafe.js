@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 class Cafe extends Component {
+
+  constructor({ cafeId }) {
+    super({ cafeId });
+    this.state = {};
+  }
 
   render () {
     return(
@@ -8,4 +16,8 @@ class Cafe extends Component {
     );
   }
 }
-export default Cafe
+const mapStateToProps = ({ cafeId }) => ({
+  cafeId
+});
+
+export default connect(mapStateToProps)(Cafe);
