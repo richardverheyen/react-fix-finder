@@ -1,5 +1,5 @@
 ## Fix Finder
-# An app that searches google for good cafes near a selected area and shows you where they are.
+An app that searches google for good cafes near a selected area and shows you where they are.
 
 #### Highlights
 * Has Hexagons.

@@ -18,6 +18,10 @@ class NearbyList extends Component {
     let i = 0
     for (let value of results) {
       let x = 34;
+      let position = {};
+      if (window.innerWidth > 600) {
+        x = 205;
+      }
       let theta = Math.PI / 3;
       if ( i > 5 ) {
         i % 2 === 0 ? (
@@ -27,10 +31,19 @@ class NearbyList extends Component {
         )
       }
       if (i > 5) { theta = Math.PI / 6 }
-      let position = {
-        top: (x*(Math.cos(theta*i))) + 'vw',
-        left: (-x*(Math.sin(theta*i))) + 'vw',
+
+      if (window.innerWidth > 600) {
+        position = {
+          top: (x*(Math.cos(theta*i))) + 'px',
+          left: (-x*(Math.sin(theta*i))) + 'px',
+        }
+      } else {
+        position = {
+          top: (x*(Math.cos(theta*i))) + 'vw',
+          left: (-x*(Math.sin(theta*i))) + 'vw',
+        }
       }
+
 
       let photoUrl
       if (results[i].hasOwnProperty('photos')) {

@@ -77,11 +77,15 @@ li {
     padding-left: 0;
     margin: 0;
     height: 33.33vw;
-    width: 39vw; }
+    max-height: 200px;
+    width: 39vw;
+    max-width: 235px; }
     #results-list ul a.hexagon {
       position: absolute;
       height: 33.33vw;
+      max-height: 200px;
       width: 39vw;
+      max-width: 235px;
       transition: all ease-out 400ms;
       z-index: 1;
       cursor: pointer; }
@@ -96,7 +100,9 @@ li {
         transform-origin: center;
         overflow: hidden;
         width: 39vw;
+        max-width: 235px;
         height: 33.33vw;
+        max-height: 200px;
         background-color: transparent; }
       #results-list ul a.hexagon div div div.hex-inner {
         transform: translate(-50%, -50%) rotate(240deg); }
