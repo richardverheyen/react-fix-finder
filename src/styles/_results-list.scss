@@ -36,23 +36,20 @@
         div {
           div.hex-inner {
             transform: translate(-50%,-50%) rotate(240deg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            p {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: $desert;
-              font-size: 4vw;
-              user-select: none;
-              background: radial-gradient(ellipse at center, black 0%,transparent 40%, transparent 100%);
-              width: 100%;
-              height: 100%;
-            }
           }
         }
+      }
+    }
+    #centre {
+      text-align: center;
+      max-width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      p {
+        user-select: none;
+        cursor: default;
       }
     }
   }

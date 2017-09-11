@@ -8,7 +8,9 @@ class NearbyList extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      hoverItem: {}
+    };
   }
 
   arrangeHexagons = (results) => { //calculate the transform rules for each hexagon
@@ -47,24 +49,27 @@ class NearbyList extends Component {
   }
   render() {
     const {results, sendToStore} = this.props;
+    const { hoverItem } = this.state;
     this.arrangeHexagons(results);
 
     return (
         <div id="results-list">
           <ul>
-          <li id="you"></li>
+          <li id="centre">
+            <p>{hoverItem.name}</p>
+            <p>{hoverItem.rating}</p>
+          </li>
           {results.slice(0, 18).map((p) =>
             <Link to={'/cafe'}
               key={p.id}
               className="hexagon"
               style={p.hexagonPos}
+              onMouseOver={() => { this.setState({ hoverItem: p })}}
               onClick={() => {sendToStore(p.id) }}>
 
               <div className="hex-container">
                 <div className="hex-container">
-                  <div className="hex-container hex-inner" style={p.backgroundImage}>
-                    <p>{p.rating}</p>
-                  </div>
+                  <div className="hex-container hex-inner" style={p.backgroundImage}></div>
                 </div>
               </div>
             </Link>
