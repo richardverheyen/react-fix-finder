@@ -35,7 +35,7 @@ li {
       #search-bar form > div#PlacesAutocomplete__root input {
         padding: 0 0 0 2vw !important;
         margin: 0 !important;
-        line-height: 32px;
+        line-height: 36px;
         margin: 0;
         border: 0;
         font-family: 'Raleway', sans-serif; }
@@ -46,7 +46,7 @@ li {
       position: absolute;
       right: 0;
       background: white;
-      line-height: 32px;
+      line-height: 36px;
       border: 0;
       padding: 0 !important;
       width: 18vw;
@@ -117,13 +117,13 @@ li {
   position: relative; }
   #cafe-page > a {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 2vw;
+    left: 2vw;
     text-decoration: none;
     z-index: 2;
     background: white;
-    line-height: 40px;
-    width: 30vw;
+    line-height: 36px;
+    width: 36vw;
     text-align: center;
     user-select: none;
     cursor: pointer;

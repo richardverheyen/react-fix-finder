@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setSelectedCafe } from '../reducer/cafeId/actions';
+import { setSelectedCafe } from '../reducer/selectedCafe/actions';
 
 class NearbyList extends Component {
 
@@ -70,7 +70,7 @@ class NearbyList extends Component {
               className={p.class}
               style={p.hexagonPos}
               onMouseOver={() => { this.setState({ hoverItem: p })}}
-              onClick={() => {sendToStore(p.id) }}>
+              onClick={() => {sendToStore(p) }}>
 
               <div className="hex-container">
                 <div className="hex-container">
@@ -89,9 +89,9 @@ const mapStateToProps = ({ results }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  sendToStore(cafeId) {
+  sendToStore(cafe) {
     dispatch(
-      setSelectedCafe(cafeId)
+      setSelectedCafe(cafe)
     );
   },
 });

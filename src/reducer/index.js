@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import results from './results';
-import cafeId from './cafeId';
+import selectedCafe from './selectedCafe';
 
 export default combineReducers({
   results,
-  cafeId
+  selectedCafe
 });

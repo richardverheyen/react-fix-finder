@@ -8,7 +8,6 @@ class Cafe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      map: ''
     };
   }
 
@@ -22,16 +21,21 @@ class Cafe extends Component {
   }
 
   componentDidMount () {
-    new window.google.maps.Map(document.getElementById('cafe-map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    })
+    let latLng = this.props.selectedCafe.geometry.location;
+    let map = new window.google.maps.Map(document.getElementById('cafe-map'), {
+      center: latLng,
+      zoom: 18
+    });
+    new window.google.maps.Marker({
+      position: latLng,
+      map: map
+    });
   }
 
 }
 
-const mapStateToProps = ({ cafeId }) => ({
-  cafeId
+const mapStateToProps = ({ selectedCafe }) => ({
+  selectedCafe
 });
 
 export default connect(mapStateToProps)(Cafe);
