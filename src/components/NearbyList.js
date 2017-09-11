@@ -49,7 +49,12 @@ class NearbyList extends Component {
           <ul>
           <li id="you"></li>
           {results.slice(0, 18).map((p) =>
-            <Link to={'/cafe'} key={p.id} className="hexagon" style={p.hexagonPos} onClick={sendToStore(p.id)}>
+            <Link to={'/cafe'}
+              key={p.id}
+              className="hexagon"
+              style={p.hexagonPos}
+              onClick={() => {sendToStore(p.id) }}>
+
               <div className="hex-container">
                 <div className="hex-container">
                   <div className="hex-container hex-inner" style={p.backgroundImage}>
