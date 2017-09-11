@@ -18,10 +18,6 @@ section > div {
 li {
   list-style: none; }
 
-#CafeMap {
-  width: 100px;
-  height: 100px; }
-
 #search-bar {
   display: flex;
   position: absolute;
@@ -116,3 +112,22 @@ li {
       #results-list ul #centre p {
         user-select: none;
         cursor: default; }
+
+#cafe-page {
+  position: relative; }
+  #cafe-page > a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    z-index: 2;
+    background: white;
+    line-height: 40px;
+    width: 30vw;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    color: #101616; }
+  #cafe-page #cafe-map {
+    width: 100vw;
+    height: 100vh; }

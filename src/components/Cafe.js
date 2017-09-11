@@ -14,15 +14,15 @@ class Cafe extends Component {
 
   render () {
     return(
-      <main>
+      <main id="cafe-page">
         <Link to={'/'}>Back</Link>
-        <div id="CafeMap"></div>
+        <div id="cafe-map"></div>
       </main>
     );
   }
 
-  componentDidMount(){
-    new window.google.maps.Map(document.getElementById('CafeMap'), {
+  componentDidMount () {
+    new window.google.maps.Map(document.getElementById('cafe-map'), {
       center: {lat: -34.397, lng: 150.644},
       zoom: 8
     })

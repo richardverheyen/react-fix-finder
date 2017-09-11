@@ -1,0 +1,21 @@
+#cafe-page {
+  position: relative;
+  > a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    z-index: 2;
+    background: white;
+    line-height: 40px;
+    width: 30vw;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    color: $slate-grey;
+  }
+  #cafe-map {
+    width: 100vw;
+    height: 100vh;
+  }
+}
