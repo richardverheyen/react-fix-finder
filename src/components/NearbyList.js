@@ -34,7 +34,7 @@ class NearbyList extends Component {
 
   render() {
     const {results} = this.props;
-    this.arrangeHexagons(results)
+    this.arrangeHexagons(results);
 
     return (
         <div id="results-list">
