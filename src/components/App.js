@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   callback (results) {
-    this.setState({results: results});
+    // this.setState({results: results});
     this.props.sendToStore(results);
   }
 
@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <main>
         <SearchBar getCafes={this.onFormSubmit}/>
-        <NearbyList results={this.state.results}/>
+        <NearbyList/>
         <div id="map"></div>
       </main>
     );

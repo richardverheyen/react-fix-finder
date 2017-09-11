@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setSelectedCafe } from '../reducer/cafeId/actions';
 
 class NearbyList extends Component {
+
+  constructor({results, sendToStore}) {
+    super({results, sendToStore});
+
+    this.state = {};
+  }
 
   arrangeHexagons = (results) => { //calculate the transform rules for each hexagon
     let i = 0
@@ -33,7 +41,7 @@ class NearbyList extends Component {
   }
 
   render() {
-    const {results} = this.props;
+    const {results, sendToStore} = this.props;
     this.arrangeHexagons(results);
 
     return (
@@ -41,7 +49,7 @@ class NearbyList extends Component {
           <ul>
           <li id="you"></li>
           {results.slice(0, 18).map((p) =>
-            <Link to={'/cafe'} key={p.id} className="hexagon" style={p.hexagonPos} >
+            <Link to={'/cafe'} key={p.id} className="hexagon" style={p.hexagonPos} onClick={sendToStore(p.id)}>
               <div className="hex-container">
                 <div className="hex-container">
                   <div className="hex-container hex-inner" style={p.backgroundImage}>
@@ -56,5 +64,16 @@ class NearbyList extends Component {
     )
   }
 }
+const mapStateToProps = ({ results }) => ({
+  results
+});
 
-export default NearbyList;
+const mapDispatchToProps = dispatch => ({
+  sendToStore(cafeId) {
+    dispatch(
+      setSelectedCafe(cafeId)
+    );
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NearbyList);
