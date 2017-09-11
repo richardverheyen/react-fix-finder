@@ -38,7 +38,11 @@ li {
         line-height: 36px;
         margin: 0;
         border: 0;
-        font-family: 'Raleway', sans-serif; }
+        font-family: 'Raleway', sans-serif;
+        font-size: 3.5vw; }
+        @media (min-width: 800px) {
+          #search-bar form > div#PlacesAutocomplete__root input {
+            font-size: 2vw; } }
         #search-bar form > div#PlacesAutocomplete__root input:focus {
           background: #fefefe;
           outline: none; }
@@ -52,7 +56,11 @@ li {
       width: 18vw;
       z-index: 1;
       font-family: 'Raleway', sans-serif;
+      font-size: 3.5vw;
       cursor: pointer; }
+      @media (min-width: 800px) {
+        #search-bar form > button {
+          font-size: 2vw; } }
       #search-bar form > button:hover {
         background: #fefefe;
         outline: none; }
