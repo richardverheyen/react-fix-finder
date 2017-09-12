@@ -45,7 +45,6 @@ class NearbyList extends Component {
         }
       }
 
-
       let photoUrl
       if (results[i].hasOwnProperty('photos')) { // Checks to see if there is a photo before calling it
         photoUrl = results[i].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})
@@ -68,9 +67,9 @@ class NearbyList extends Component {
     }
   }
   render() {
-    const {results, sendToStore} = this.props;
-    const { hoverItem } = this.state;
-    this.arrangeHexagons(results);
+    const {results, sendToStore} = this.props
+    const { hoverItem } = this.state
+    this.arrangeHexagons(results)
     return (
         <div id="results-list">
           <ul>
@@ -78,7 +77,7 @@ class NearbyList extends Component {
             <p>{hoverItem.name}</p>
             <p>{hoverItem.rating}</p>
           </li>
-          {results.slice(0, 18).map((p) =>
+          {results.map((p) =>
             <Link to={'/cafe'}
               key={p.id}
               className={p.class}
